@@ -17,15 +17,19 @@ import bfx.clases.CDanios1;
 import bfx.controladores.CMensajes;
 import bfx.controladores.CPanelFondo;
 import bfx.controladores.CValidaciones;
+import java.awt.Event;
 import java.util.Date;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import javax.swing.ImageIcon;
 import java.util.logging.Logger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import javax.swing.InputMap;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
@@ -52,6 +56,10 @@ public class CConsultaDanios extends javax.swing.JFrame
     public CConsultaDanios()
     {
         initComponents();
+        
+        InputMap objInputMap = objTFnombreUsuarios.getInputMap(objTFnombreUsuarios.WHEN_FOCUSED);
+        objInputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        
         DefaultTableModel objDefaultTableModel1 = (DefaultTableModel) objTdanios.getModel();
    
 //        objBmodificar.setVisible(false);

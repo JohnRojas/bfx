@@ -20,10 +20,14 @@ import bfx.controladores.CMensajes;
 import bfx.controladores.CPanelFondo;
 import bfx.controladores.CQuerys;
 import bfx.controladores.CValidaciones;
+import java.awt.Event;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.InputMap;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 
 /**
  * Interfaz gráfica de usuario para dar del alta un daño
@@ -53,6 +57,10 @@ public class CAltaDanios extends javax.swing.JFrame
         this.pack();
         this.setSize(569 , 333);
         objCBidusuariosDanios2.setVisible(false);
+        
+       InputMap objInputMap = objTFmontoDanios.getInputMap(objTFmontoDanios.WHEN_FOCUSED);
+        objInputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+               
     }
 
     @SuppressWarnings("unchecked")

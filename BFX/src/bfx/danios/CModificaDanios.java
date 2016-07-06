@@ -18,8 +18,12 @@ import bfx.controladores.CManipulaInterfaz;
 import bfx.controladores.CMensajes;
 import bfx.controladores.CPanelFondo;
 import bfx.controladores.CValidaciones;
+import java.awt.Event;
 import javax.swing.ImageIcon;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
+import javax.swing.InputMap;
+import javax.swing.KeyStroke;
 
 /**
  * Interfaz gráfica de usuario para dar del alta un daño
@@ -56,6 +60,11 @@ public class CModificaDanios extends javax.swing.JFrame
 //        ImageIcon objImageIcon2 = new ImageIcon(getClass().getResource("../imagenes/xina.png"));
 //        Image objImage2 = objImageIcon2.getImage();
         this.setIconImage(objImage1);
+        
+        InputMap objInputMap = objTFmontoDanios.getInputMap(objTFmontoDanios.WHEN_FOCUSED);
+        objInputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        objLidusuario.setVisible(false);
+        
     }
 
     /**
